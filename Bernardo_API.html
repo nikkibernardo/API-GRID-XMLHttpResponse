@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Boredom Activity</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script> src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"</script>
+    
+</head>
+<body>
+    <h1>Activity:<span> id = "act"></span><br /></h1>
+</body>
+<script type = "text/javascript">
+
+    async function GetData() {
+        const response = await fetch ("https://www.boredapi.com/api/activity")
+        const data = await response.json();
+        const {activity} = data;
+
+        document.getElementById('act').textContent = activity;
+    }
+
+    GetData();
+
+</script>
+<div class="container-fluid">
+    <h1>SYSTEM INTEGRATION AND ARCHITECTURE</h1>
+    <p> Boredom Activity</p>
+    <div class="row">
+        <div class="col-sm-4" style="background-color: lavender;">Activity: </div> 
+        <div class="col-sm-8" style="background-color:lavenderblush;">Activity Message </div>
+    </div>
+
+</div>
+
+</html>
