@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Airline Details</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script> src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"</script>
+    
+</head>
+<script type = "text/javascript">
+
+    async function GetData() {
+        const response = await fetch ("https://api.instantwebtools.net/v1/airlines/1")
+        const data = await response.json();
+        const {name, origin, slogan, website} = data;
+
+        document.getElementById('nameA').textContent = name;
+        document.getElementById('originA').textContent = origin;
+        document.getElementById('sloganA').textContent = slogan;
+        document.getElementById('websiteA').textContent = website;
+    }
+
+    GetData();
+
+</script>
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-sm-4" style="background-color: rgb(106, 200, 231);"><b>Name of Airline:</b> </div> 
+        <div class="col-sm-8" style="background-color: whitesmoke;"><span id = "nameA"></span></div>    
+    </div>
+    <div class="row">
+        <div class="col-sm-4" style="background-color: rgb(106, 200, 231);"><b>Country of Origin:</b> </div> 
+        <div class="col-sm-8" style="background-color: whitesmoke;"><span id = "originA"></span></div>    
+    </div>
+    <div class="row">
+        <div class="col-sm-4" style="background-color: rgb(106, 200, 231);"><b>Slogan:</b> </div> 
+        <div class="col-sm-8" style="background-color: whitesmoke;"><span id = "sloganA"></span></div>    
+    </div>
+    <div class="row">
+        <div class="col-sm-4" style="background-color: rgb(106, 200, 231);"><b>Website: </b></div> 
+        <div class="col-sm-8" style="background-color: whitesmoke;"><span id = "websiteA"></span></div>    
+    </div>
+
+</div>
+
+</html>
